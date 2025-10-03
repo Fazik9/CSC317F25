@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Roboto+Slab:wght@400;600;700&display=swap');
+
+:root{
+  /* ties into the #a66 header/footer bars you already have */
+  --bar: #a66;
+  --bar-dark: #8a5454;
+  --ink: #222;
+}
+html{ font-size:62.5%; } /* 1rem = 10px */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR styling/typesetting CSS code BELOW HERE */
+
+/* ==== YOUR ADDITIONS START ==== */
+
+/* base text */
+body{
+  font-family:"Merriweather", serif;
+  font-size:1.6rem;         /* 16px body under 10px root */
+  line-height:1.7;
+  color:var(--ink);
+  letter-spacing:0.01em;
+  word-spacing:0.03em;
+}
+
+/* headings */
+h1,h2,h3,h4{
+  font-family:"Roboto Slab","Merriweather",serif;
+  letter-spacing:0.04em;
+  line-height:1.25;
+  margin-top:2.4rem;
+  margin-bottom:1.2rem;
+}
+h1{ font-size:3.2rem; text-align:center; }
+h2{ font-size:2.4rem; }
+h3{ font-size:2.0rem; }
+h4{ font-size:1.8rem; }
+
+/* first paragraph after each section heading gets an indent */
+section h1 + p,
+section h2 + p,
+section h3 + p,
+section h4 + p{
+  text-indent:1.25rem;
+}
+
+/* paragraphs and rhythm */
+p{ margin:1.2rem 0 1.6rem; }
+
+/* links */
+a{
+  color:var(--bar);
+  text-decoration:underline;
+  outline:none;                          /* remove default outline */
+  transition:color .15s ease, background-color .15s ease, text-decoration-color .15s ease, box-shadow .15s ease;
+}
+a:visited{ color:#5a4b87; }
+a:hover,
+a:focus{ text-decoration:none; }
+a:focus-visible{
+  /* custom accessible focus since we removed default outline */
+  box-shadow:0 0 0 .2rem rgba(166,102,102,.3);
+  border-radius:.2rem;
+}
+a:active{
+  color:#2a1717;
+  background:#f3eaea;
+  text-decoration:none;
+}
+
+/* external link icon (no HTML edits) */
+a[href^="http"]:after{
+  content:"";
+  display:inline-block;
+  width:1.2rem; height:1.2rem;
+  margin-left:.35rem;
+  background:url("external-link-52.png") no-repeat center/1.2rem 1.2rem;
+  vertical-align:text-bottom;
+}
+
+/* lists: match paragraph rhythm and give custom bullets */
+ul,ol{
+  margin:1.2rem 0 1.6rem 2.4rem;  /* clean spacing + indent */
+  padding:0;
+}
+li{
+  line-height:1.7;
+  margin:.4rem 0;
+}
+ul{ list-style:none; }
+ul li{
+  position:relative;
+  padding-left:1.6rem;
+}
+ul li::before{
+  content:"";
+  position:absolute; left:0; top:.7rem;
+  width:.7rem; height:.7rem;
+  background:var(--bar);
+  border-radius:.1rem;                 /* subtle square */
+}
+
+/* nav: vertical menu, harmonized with page */
+nav ul{
+  list-style:none;
+  margin:0; padding:0;
+  display:flex; flex-direction:column;
+  gap:1.2rem;
+}
+nav li a{
+  display:block;
+  padding:1.2rem 1.6rem;
+  border:.15rem solid #d8bcbc;         /* echoes the bars */
+  border-radius:.8rem;
+  text-align:center;
+  text-decoration:none;
+  color:#2b2b2b;
+  background:#fff;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+nav li a:hover,
+nav li a:focus{ background:#fbf7f7; border-color:var(--bar); }
+nav li a:active{ background:#f3eaea; color:var(--bar-dark); border-color:var(--bar-dark); }
+
+/* images stay neat */
+img{ max-width:100%; height:auto; }
+
+/* ==== YOUR ADDITIONS END ==== */
